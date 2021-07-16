@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpotlightCard } from '../components/SpotlightCard';
 
 import * as S from './styles';
 
@@ -21,6 +22,12 @@ export const Dashboard: React.FC = () => {
 					<S.Icon name="power"/>
 				</S.UserWrapper>
 			</S.Header>
+			
+			<S.SpotlightCards>
+				<SpotlightCard/>
+				<SpotlightCard/>
+				<SpotlightCard/>
+			</S.SpotlightCards>
 		</S.Container>
 	)
 }

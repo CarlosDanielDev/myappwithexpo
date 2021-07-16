@@ -8,7 +8,8 @@ export const Container = styled.View`
 	background: ${({theme}) => theme.colors.background};
 `;
 export const Title = styled.Text`
-	font-size: 40px;
+	font-size: 26px;
 	color: ${({theme}) => theme.colors.title};
 	font-weight: bold;
+	font-family: ${({theme}) => theme.fonts.medium};
 `;

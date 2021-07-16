@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpotlightCard } from '../components/SpotlightCard';
+import { SpotlightCard } from '../../components/SpotlightCard';
 
 import * as S from './styles';
 
@@ -24,9 +24,9 @@ export const Dashboard: React.FC = () => {
 			</S.Header>
 			
 			<S.SpotlightCards>
-				<SpotlightCard/>
-				<SpotlightCard/>
-				<SpotlightCard/>
+				<SpotlightCard type="up" title="Entradas" amount="R$ 17.000,00" lastTransaction="Última transação em 16 de julho" />
+				<SpotlightCard type="down" title="Saídas" amount="R$ 53,00" lastTransaction="Última saída dia 03 de junho" />
+				<SpotlightCard type="total" title="Total" amount="R$ 16.947,00" lastTransaction="01 à 16 de junho" />
 			</S.SpotlightCards>
 		</S.Container>
 	)

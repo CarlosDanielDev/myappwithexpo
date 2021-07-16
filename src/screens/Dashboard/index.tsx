@@ -1,15 +1,26 @@
 import React from 'react';
-import { Text } from 'react-native';
-
 
 import * as S from './styles';
 
 export const Dashboard: React.FC = () => {
 	return (
 		<S.Container>
-			<S.Title>
-				Dashboard
-			</S.Title>
+			<S.Header>
+				<S.UserWrapper>
+					<S.UserInfo>
+						<S.Photo source={{uri: 'https://avatars.githubusercontent.com/u/32473182?v=4'}}/>
+						<S.User>
+							<S.UserGreeting>
+								Olá,
+							</S.UserGreeting>
+							<S.UserName>
+								Carlos Daniel
+							</S.UserName>
+						</S.User>
+					</S.UserInfo>
+					<S.Icon name="power"/>
+				</S.UserWrapper>
+			</S.Header>
 		</S.Container>
 	)
 }

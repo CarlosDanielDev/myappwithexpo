@@ -4,11 +4,12 @@ import * as S from './styles';
 
 interface Props {
 	title: string;
+	onPress: Function
 }
 
-export const CategorySelect: React.FC<Props> = ({title}) => {
+export const CategorySelectButton: React.FC<Props> = ({title, onPress}) => {
 	return (
-		<S.Container>
+		<S.Container onPress={() => onPress()}>
 			<S.Category>
 				{title}
 			</S.Category>

@@ -53,3 +53,6 @@ buck-out/
 .expo/
 web-build/
 yarn.lock
+ios/Podfile.lock
+.vscode/settings.json
+yarn.lock

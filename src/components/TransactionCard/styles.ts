@@ -3,7 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 type TypeProps = {
-	type: 'income' | 'outcome'
+	type: 'up' | 'down'
 }
 
 export const Container = styled.View`
@@ -23,7 +23,7 @@ export const Amount = styled.Text<TypeProps>`
 	margin-top: 2px;
 	font-family: ${({theme}) => theme.fonts.regular};
 	color: ${({theme, type}) => 
-	type === 'outcome' ? theme.colors.attention : theme.colors.success};
+	type === 'down' ? theme.colors.attention : theme.colors.success};
 `;
 
 export const Footer = styled.View`
@@ -47,7 +47,7 @@ export const CategoryName = styled.Text`
 	font-size: ${RFValue(14)}px;
 	color: ${({theme}) => theme.colors.text};
 	font-family: ${({theme}) => theme.fonts.regular};
-	margin-left: 17px;
+	margin-left: ${RFValue(17)}px;
 `;
 
 export const Date = styled.Text`

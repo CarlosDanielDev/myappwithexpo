@@ -5,9 +5,17 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getStatusBarHeight, getBottomSpace } from 'react-native-iphone-x-helper';
 
 import { DataListProps } from '.';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
 	flex: 1 ;
+	background: ${({theme}) => theme.colors.background};
+`;
+
+export const ContainerLoading = styled.View`
+	flex: 1 ;
+	align-items: center;
+	justify-content: center;
 	background: ${({theme}) => theme.colors.background};
 `;
 
@@ -57,6 +65,8 @@ export const Icon = styled(Feather)`
 	color: ${({theme}) => theme.colors.secondary};
 	font-size: ${RFValue(24)}px;
 `;
+
+export const LogoutButton = styled(BorderlessButton)``;
 
 export const SpotlightCards = styled.ScrollView.attrs({
 	horizontal: true,

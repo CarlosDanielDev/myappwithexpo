@@ -7,8 +7,8 @@ import * as S from './styles';
 import { transactionKey } from '../../constants';
 import { useFocusEffect } from '@react-navigation/core';
 import { formatCurrency, formatDate, formatDateFriendly } from '../../utils/formatting';
-import { ActivityIndicator } from 'react-native';
 import { useTheme } from 'styled-components';
+import { Loading } from '../../components/Loading';
 
 export interface DataListProps extends TransactionPropsCard {
 	id: string;
@@ -27,10 +27,10 @@ type HighLightDataProps = {
 }
 
 export const Dashboard: React.FC = () => {
+
 	const [data, setData] = useState<DataListProps[]>([]);
 	const [highLightData, setHighLightData] = useState<HighLightDataProps>({} as HighLightDataProps);
 	const [isLoading, setIsLoading] = useState(true);
-	const theme = useTheme()
 
 
 	const getFormattedTimesStamp = (collection: DataListProps[], type: 'up' | 'down') => {
@@ -69,7 +69,7 @@ export const Dashboard: React.FC = () => {
 			const lastTransactionExpensive =  getFormattedTimesStamp(currentTransactions, 'down');
 			const totalInterval = `01 à ${lastTransactionExpensive}`;
 
-			setData(transactionsFormatted);
+			setData(transactionsFormatted.reverse());
 			setHighLightData({
 				expensive: {
 					amount: formatCurrency(expensiveTotal),
@@ -100,11 +100,10 @@ export const Dashboard: React.FC = () => {
 
 	if(isLoading) {
 		return (
-			<S.ContainerLoading>
-				<ActivityIndicator color={theme.colors.primary} size="large"/>
-			</S.ContainerLoading>
-		)
+			<Loading/>
+		);
 	}
+
 	return (
 		<S.Container>
 			<S.Header>
@@ -152,7 +151,7 @@ export const Dashboard: React.FC = () => {
 					Listagem
 				</S.Title>
 				<S.TransactionList
-					data={data.reverse()}
+					data={data}
 					keyExtractor={(_item, index) => String(index)}
 					renderItem={({item}) => (
 						<TransactionCard 

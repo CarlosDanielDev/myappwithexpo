@@ -1,3 +1,6 @@
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+
 export const formatCurrency = (value: number) => {
 	return Number(value).toLocaleString('pt-BR', {
 		style: 'currency',
@@ -16,4 +19,10 @@ export const formatDate = (value: Date) => {
 
 export const formatDateFriendly = (value: Date) => {
 	return `${value.getDate()} de ${value.toLocaleString('pt-BR', { month: 'long' })}`;
+}
+
+export const formatMonthAndYear = (date: Date) => {
+	return format(date, 'MMMM, yyyy', {
+		locale: ptBR
+	})
 }

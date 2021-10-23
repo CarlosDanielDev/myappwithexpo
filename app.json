@@ -1,9 +1,10 @@
 {
-  "name": "meuappcomexpo",
-  "displayName": "meuappcomexpo",
+  "name": "rbmfinances",
+  "displayName": "rbmfinances",
   "expo": {
-    "name": "meuappcomexpo",
-    "slug": "meuappcomexpo",
+    "name": "rbmfinances",
+    "slug": "rbmfinances",
+    "scheme": "rbmfinances",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

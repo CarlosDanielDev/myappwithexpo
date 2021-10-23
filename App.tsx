@@ -3,7 +3,7 @@ import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
 import { ThemeProvider } from 'styled-components';
 import AppLoading from 'expo-app-loading';
-import { NavigationContainer } from '@react-navigation/native';
+
 import {
 	useFonts,
 	Poppins_400Regular,
@@ -12,7 +12,9 @@ import {
 } from '@expo-google-fonts/poppins';
 
 import theme from './src/global/styles/theme';
-import { AppRoutes } from './src/screens/routes/app.routes';
+import { StatusBar } from 'react-native';
+import { AuthProvider } from './src/hooks/auth';
+import { Routes } from './src/screens/routes';
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -25,9 +27,10 @@ export default function App() {
 	
   return (
 		<ThemeProvider theme={theme}>
-			<NavigationContainer>
-				<AppRoutes/>
-			</NavigationContainer>
+				<StatusBar barStyle="light-content"/>
+        <AuthProvider>
+          <Routes/>
+        </AuthProvider>
 		</ThemeProvider>
 	)
 }

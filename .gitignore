@@ -56,3 +56,4 @@ yarn.lock
 ios/Podfile.lock
 .vscode/settings.json
 yarn.lock
+.env

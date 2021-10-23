@@ -22,6 +22,7 @@ import { CategorySelect } from '../CategorySelect';
 import * as S from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { transactionKey } from '../../constants';
+import { Header } from '../../components/Header';
 
 interface FormData {
 	name: string
@@ -110,11 +111,9 @@ export const Register: React.FC = () => {
 	return (
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 			<S.Container>
-				<S.Header>
-					<S.Title>
-						Cadastro
-					</S.Title>
-				</S.Header>
+				<Header>
+					Cadastro
+				</Header>
 
 				<S.Form>
 					<S.Fields>
